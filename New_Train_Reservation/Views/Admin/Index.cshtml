@@ -1,0 +1,77 @@
+﻿@model IEnumerable<New_Train_Reservation.Models.Admin_Tickets>
+
+@{
+    ViewData["Title"] = "Tickets";
+    Layout = "~/Views/Shared/_Layout _Admin_login.cshtml";
+}
+
+<h1>Tickets</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Time_Pickup)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pickup_Station)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Destination)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Seat_Number)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ticket_Money)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ticket_Classes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Train_Coach_Number)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TrainID)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Time_Pickup)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pickup_Station)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Destination)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Seat_Number)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ticket_Money)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ticket_Classes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Train_Coach_Number)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.TrainID)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

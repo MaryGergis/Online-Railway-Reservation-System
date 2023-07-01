@@ -1,0 +1,110 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewBag.Title = "Complaints & Suggestions";
+    Layout = "../Shared/_Layout_login.cshtml";
+
+
+}
+@model Suggestions_Complaints
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body style="background-color:white">
+
+
+    <div class="content">
+
+        <div class="container">
+            <h1 class="h1">Compliments, Suggestions and Feedback</h1>
+            <div id="vert">
+                <div class="vertical" id="everything">
+                    <h2 class="h2"> We are always here to support you!</h2>
+                    <p>Let's talk about everything! <br> We apperciate your Message, Let us know how we can help you?</p>
+                    <p><img src="~/Images/undraw-contact.svg" alt="Image" class="img-fluid" width="80%"></p>
+                </div>
+
+
+
+                <div class="vertical" id="information">
+
+                    <form asp-action="Complaints_Suggestions" asp-controller="Settings" method="post">
+                        <div class="row">
+                            <div>
+                                <label asp-for="First_Name">User Name:</label>
+                                <input type="text" class="input-box" asp-for="First_Name" value="" placeholder="  Your name" required>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div>
+                                <label asp-for="Email">Email:</label>
+                                <input type="text" class="input-box" asp-for="Email" value="" placeholder="  abcde@gmail.com" required>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div>
+                                <label asp-for="Phone_Number">Phone Number:</label>
+                                <input type="text" class="input-box" asp-for="Phone_Number" value="" required placeholder="  (+20) 012-345-678-90">
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div>
+                                <label asp-for="Message_Type">Message Type:</label>
+                                <input type="radio" asp-for="Message_Type" value="@MessageType.Complaints" checked>@MessageType.Complaints
+                                <input type="radio" asp-for="Message_Type" value="@MessageType.Suggestions">@MessageType.Suggestions
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div>
+                                <label asp-for="Subject">Subject:</label>
+                                <input type="text" class="input-box" asp-for="Subject" value="" required placeholder="  Subject">
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div>
+                                <label asp-for="Details">Details:</label>
+                                <textarea class="input-box" asp-for="Details" cols="30" rows="7" required placeholder="  Write your message"></textarea>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div>
+                                <label>Upload File:</label>
+                                <input type="file">
+                            </div>
+                        </div> <br>
+
+                        <div class="row">
+                            <div> <input type="submit" value="Send Message" id="comp" class="btn btn-primary"></div>
+                        </div>
+
+                    </form>
+                    @{
+                        if (TempData["sc_success"] != "")
+                        {
+                            <div> <p class="alert-success">Sent Successfully! </p></div>
+                        }
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

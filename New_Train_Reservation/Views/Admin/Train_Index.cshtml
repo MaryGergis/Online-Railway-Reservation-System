@@ -1,0 +1,78 @@
+﻿@model IEnumerable<New_Train_Reservation.Models.Trains>
+
+@{
+    ViewData["Title"] = "Trains";
+    Layout = "~/Views/Shared/_Layout _Admin_login.cshtml";
+
+}
+
+<h1>Trains</h1>
+
+<p>
+    <a asp-action="Train_Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Train_Number)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Number_of_available_tickets)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Driver_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Destination)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pickup_Station)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date_Pickup)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Number_of_stoppages)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.classes)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Train_Number)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Number_of_available_tickets)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Driver_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Destination)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pickup_Station)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date_Pickup)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Number_of_stoppages)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.classes)
+            </td>
+            <td>
+                <a asp-action="Train_Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-action="Train_Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

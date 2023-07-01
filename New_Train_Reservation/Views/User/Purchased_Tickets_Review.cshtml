@@ -1,0 +1,108 @@
+﻿@model IEnumerable<New_Train_Reservation.Models.User_Tickets>
+
+@{
+    ViewData["Title"] = "Purchased_Tickets";
+    Layout = "~/Views/Shared/_Layout_login.cshtml";
+}
+
+<h1>Purchased Tickets</h1>
+
+<div>
+    @if (TempData["PTicket"] != "")
+    {
+        <h3 class="alert-danger">
+            @TempData["PTicket"]
+        </h3>
+    }
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Time_Pickup)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pickup_Station)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Destination)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Seat_Number)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ticket_Money)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ticket_Class)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Train_Coach_Number)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Train_Number)
+            </th>
+            
+
+            <th></th>
+        </tr>
+    </thead>
+
+
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Time_Pickup)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Pickup_Station)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Destination)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Seat_Number)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ticket_Money)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ticket_Class)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Train_Coach_Number)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Train_Number)
+                </td>
+                
+                <td>
+                    <form asp-action="Cancellation" asp-controller="User" asp-route-id="@item.Id">
+                        <input type="submit" value="Cancel Ticket" class="btn btn-danger" />
+                    </form>
+                </td>
+            </tr>
+        }
+       
+
+    </tbody></table>
+    <center>
+        <div>
+        <form asp-action="Search" asp-controller="User" method="get">
+            <button type="submit" class="btn btn-primary" />Add
+
+        </form>
+        </div>
+    </center>
+    
+
+

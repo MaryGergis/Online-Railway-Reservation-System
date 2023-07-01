@@ -1,0 +1,28 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewBag.Title = "Adminstration Section";
+    Layout = "~/Views/Shared/_Layout _Admin_login.cshtml";
+}
+
+<body style="background-color:whitesmoke">
+
+    <center>
+    <h1>Welcome to Adminstration Section</h1>
+    </center>
+            <div  style="float:left;display:inline;">
+            <img src="../Images/Ticket.png" width="30%" height="25%" />
+            <form asp-action="Index" asp-controller="Admin">
+            <input type="submit" class="btn btn-primary"  value="Tickets">
+            </form>
+                
+   </div>
+    <div  style="float:right;display:inline;">
+                <img float="right" src="../Images/Train.jpg" width="30%" height="20%"/>
+                <form asp-action="Train_Index" asp-controller="Admin">
+                <input type="submit" class="btn btn-primary"  value="Trains">
+                </form>
+            </div>
+   
+</body>

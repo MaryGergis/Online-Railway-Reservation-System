@@ -1,0 +1,153 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+
+    if (ViewBag.Error == "")
+        Layout = "../Shared/_Layout_login.cshtml";
+    else
+        Layout = "../Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/Home.css">
+    <title>Document</title>
+</head>
+<body>
+    <p class="back">
+
+    </p>
+    <div>
+        <img class="img-responsive" src="../Images/pic/pexels-bruno-henrique-1986932.jpg" style=" height:750px; ">
+    </div>
+
+    <div class="container-fluid p-0 border-danger">
+        <div class="main-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <label class="main-label">ENR News</label>
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="col-6 col-md-4 my-2">
+                        <a href='NewsDetails.aspx?NewsID=1680' class="home-news-post" />
+                        <img src='../Images/pic/pexels-kristina-chuprina-14715658.jpg' class="img-responsive" />
+                        <p>
+                            A pleasant surprise for the passengers of Upper Egypt - the Minister of Transport announces the re-operation of the first fully rehabilitated, developed and modernized Spanish train before Eid Al-Fitr
+                        </p>
+                        <span>
+                            11/04/2023
+                        </span>
+                        </a>
+                    </div>
+
+                    <div class="col-6 col-md-4 my-2">
+                        <a href='NewsDetails.aspx?NewsID=1679' class="home-news-post" />
+                        <img src='../Images/pic/pexels-rajat-jain-325200.jpg' class="img-responsive" />
+                        <p>
+                            A Media Statement from Railway Club
+                        </p>
+                        <span>
+                            08/04/2023
+                        </span>
+                        </a>
+                    </div>
+
+                    <div class="col-6 col-md-4 my-2">
+                        <a href='NewsDetails.aspx?NewsID=1678' class="home-news-post" />
+                        <img src='../Images/pic/pexels-bruno-henrique-1986932.jpg' class="img-responsive" />
+                        <p>
+                            The Minister of Transport has breakfast with a large number of train drivers, workers and technicians after an inspection tour of Elfarz Cairo workshops in the Sharabia
+                        </p>
+                        <span>
+                            04/04/2023
+                        </span>
+                        </a>
+                    </div>
+
+                </div>
+                <div class="foo">
+                    <footer>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-sm-4 col-xs-12">
+                                    <h4><i class="fa-light fa-check"></i>Developing Projects</h4>
+                                    <ul>
+                                        <li>
+                                            <a href="ENR.aspx?ID=10">Egyptian National Railways Restructuring</a>
+                                        </li>
+                                        <li>
+                                            <a href="ENR.aspx?ID=11">Cargo Service</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="col-sm-4 col-xs-12">
+                                    <h4><i class="fas fa-link fa-lg"></i>Important Links </h4>
+                                    <ul>
+                                        <li>
+                                            <a href="http://mot.gov.eg/" target="_blank">Ministry of Transport</a>
+                                        </li>
+                                        <li>
+                                            <a href="http://www.nat.org.eg/arabic/" target="_blank">Metro</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.egypt.gov.eg " target="_blank">Egyptian Government Portal</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="col-sm-4 col-xs-12">
+                                    <h4><i class="fas fa-envelope fa-lg"></i>Complaints & Suggestions</h4>
+                                    <p>
+                                        Feel free to share your suggestions or complaints
+                                        <a id="btnInquery" class="btn btn-info btn-sm" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$btnInquery&quot;, &quot;&quot;, false, &quot;&quot;, &quot;Complaint.aspx&quot;, false, true))">
+                                            Share
+                                            <i class="fa fa-share"></i>
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <hr style="color:white; text-align:center; height:2px;" />
+                                </div>
+                                <div class="col-sm-12 text-center">
+                                    <nav>
+                                        <a href="ENR.aspx?ID=2">About ENR</a>
+                                        <!--    <a href="ENR.aspx?ID=5">Stations Map</a> -->
+                                        <a href="FAQ.aspx">FAQ</a>
+                                        <a href="ENR.aspx?ID=4">Safety Rules</a>
+                                        <a href="PhotoGallery.aspx">Photo Gallery</a>
+                                        <a href="ENR.aspx?ID=3">Sale Channels</a>
+                                        <a href="ContactUs.aspx">Contact us</a>
+                                    </nav>
+                                </div>
+                                <div class="col-sm-12">
+                                    <hr style="color:white; text-align:center; height:2px;" />
+                                </div>
+                                <div class="col-sm-12 text-center">
+                                    <p>
+                                        Developed by
+                                        <a href="http://www.transit.com.eg" target="_blank">
+                                            <img src='../Images/pic/TransIT.png' />
+                                            TransIT
+                                        </a> © 2023
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </footer>
+                </div>
+
+
+              
+
+</body>
+</html>

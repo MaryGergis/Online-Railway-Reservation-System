@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="Views\Admin\Admin_Edit.cshtml" />
+    <None Include="Views\Admin\Admin_Home.cshtml" />
+    <None Include="Views\Admin\Create.cshtml" />
+    <None Include="Views\Admin\Delete.cshtml" />
+    <None Include="Views\Admin\Edit.cshtml" />
+    <None Include="Views\Admin\Index.cshtml" />
+    <None Include="Views\Admin\Signin.cshtml" />
+    <None Include="Views\Admin\Train_Create.cshtml" />
+    <None Include="Views\Admin\Train_Delete.cshtml" />
+    <None Include="Views\Admin\Train_Edit.cshtml" />
+    <None Include="Views\Admin\Train_Index.cshtml" />
+    <None Include="Views\Home\Index.cshtml" />
+    <None Include="Views\Settings\Complaints_Suggestions.cshtml" />
+    <None Include="Views\Settings\ContactUs.cshtml" />
+    <None Include="Views\User\Index.cshtml" />
+    <None Include="Views\User\Purchased_Tickets.cshtml" />
+    <None Include="Views\User\Purchased_Tickets_Review.cshtml" />
+    <None Include="Views\User\Search.cshtml" />
+    <None Include="Views\User\Search_Result.cshtml" />
+    <None Include="Views\User\Signin.cshtml" />
+    <None Include="Views\User\SignUp.cshtml" />
+    <None Include="Views\User\User_Edit.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.5">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.13" />
+  </ItemGroup>
+
+</Project>

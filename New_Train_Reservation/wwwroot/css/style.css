@@ -1,0 +1,45 @@
+body {
+  background-color: #fff;
+/*  line-height: 1.9;*/
+  color: #8c8c8c; }
+
+h1, h2, h3, h4, h5, h6 {font-family: "Roboto"; color: #000; }
+
+.h2{font-size: 24px; color: #3366FF;}
+
+.h1{text-align: center; color: #3366FF;}
+.input-box { border: none; background: #f3f3f3; margin: 2px; width: 100%;}
+
+.input-box:active, .input-box:focus {
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-color: #000;
+  background: #f3f3f3;
+}
+
+
+#comp, .input-box{ height: 50px; }
+#message{height: 120px;}
+
+
+#comp {
+    border: none;
+}
+
+#comp {
+    background: #000;
+    color: #fff;
+    padding: 15px 20px;
+}
+
+
+#vert {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 50px 0;  max-width: 1200px; padding:20px; margin:0 auto;
+}
+    
+     
+#everything{width: 55%;}
+#information{width: 45%;}

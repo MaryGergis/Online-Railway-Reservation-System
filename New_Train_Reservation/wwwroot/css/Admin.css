@@ -1,0 +1,38 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+.container {
+    width: fit-content;
+    margin: auto;
+    position: center;
+    padding: 16px;
+    background-color: white;
+}
+.R {
+    height: 100%;
+    float: right;
+    
+    background-size:cover;
+}
+
+.L {
+    background-size: cover;
+    height: 100%;
+    float: left;
+    display: inline;
+}

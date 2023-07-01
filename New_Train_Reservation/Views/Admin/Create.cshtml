@@ -1,0 +1,86 @@
+﻿@model New_Train_Reservation.Models.Admin_Tickets
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout _Admin_login.cshtml";
+}
+
+<h1>Create</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Time_Pickup" class="control-label"></label>
+                <input asp-for="Time_Pickup" class="form-control" />
+                <span asp-validation-for="Time_Pickup" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Pickup_Station" class="control-label"></label>
+                <input asp-for="Pickup_Station" class="form-control" />
+                <span asp-validation-for="Pickup_Station" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Destination" class="control-label"></label>
+                <input asp-for="Destination" class="form-control" />
+                <span asp-validation-for="Destination" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Seat_Number" class="control-label"></label>
+                <input asp-for="Seat_Number" class="form-control" />
+                <span asp-validation-for="Seat_Number" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ticket_Money" class="control-label"></label>
+                <input asp-for="Ticket_Money" class="form-control" />
+                <span asp-validation-for="Ticket_Money" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ticket_Classes" class="control-label"></label>
+                <select asp-for="Ticket_Classes" class="form-control">
+                    <option>
+                        @Ticket_Classes.AC1
+                    </option>
+                    <option>
+                        @Ticket_Classes.AC2
+                    </option>
+
+                </select>
+
+                <span asp-validation-for="Ticket_Classes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Train_Coach_Number" class="control-label"></label>
+                <input asp-for="Train_Coach_Number" class="form-control" />
+                <span asp-validation-for="Train_Coach_Number" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TrainID" class="control-label"></label>
+                <input asp-for="TrainID" class="form-control" />
+                <span asp-validation-for="TrainID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+      
+       
+    </div>
+</div>
+<div>
+    @if (ViewBag.TrainID != "")
+    {
+        <p class="alert-danger">
+            @TempData["TrainID"]
+        </p>
+    }
+</div>
+<div>
+    <a asp-action="Index">Back to Tickets List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

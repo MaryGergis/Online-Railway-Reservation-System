@@ -1,0 +1,76 @@
+﻿@model New_Train_Reservation.Models.Trains
+
+@{
+    ViewData["Title"] = "Train Create";
+    Layout = "~/Views/Shared/_Layout _Admin_login.cshtml";
+
+}
+
+<h1>Train Create</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Train_Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Train_Number" class="control-label"></label>
+                <input asp-for="Train_Number" class="form-control" />
+                <span asp-validation-for="Train_Number" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Number_of_available_tickets" class="control-label"></label>
+                <input asp-for="Number_of_available_tickets" class="form-control" />
+                <span asp-validation-for="Number_of_available_tickets" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Driver_ID" class="control-label"></label>
+                <input asp-for="Driver_ID" class="form-control" />
+                <span asp-validation-for="Driver_ID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Destination" class="control-label"></label>
+                <input asp-for="Destination" class="form-control" />
+                <span asp-validation-for="Destination" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Pickup_Station" class="control-label"></label>
+                <input asp-for="Pickup_Station" class="form-control" />
+                <span asp-validation-for="Pickup_Station" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Date_Pickup" class="control-label"></label>
+                <input asp-for="Date_Pickup" class="form-control" />
+                <span asp-validation-for="Date_Pickup" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Number_of_stoppages" class="control-label"></label>
+                <input asp-for="Number_of_stoppages" class="form-control" />
+                <span asp-validation-for="Number_of_stoppages" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="classes" class="control-label"></label>
+                <select asp-for="classes" class="form-control">
+                    <option>
+                        @Classes.VIP
+                    </option>
+                    <option>
+                        @Classes.Russie
+                    </option>
+                </select>
+                <span asp-validation-for="classes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Train_Index">Back to Trains List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,85 @@
+﻿@{
+    ViewBag.Title = "Sign In";
+    Layout = "~/Views/Shared/_Layout _Admin.cshtml";
+
+}
+@model Admin
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body, html {
+            height: 100%;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .bg-img {
+            
+            background-image: url("../Images/train/ps.jpg");
+            height: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+
+        }
+
+        /* Add styles to the form container */
+        .container {
+            width:fit-content;
+            margin:auto;
+            position: center;
+            padding: 16px;
+            background-color: white;
+           
+        }
+
+        /* Full-width input fields */
+        input[type=text], input[type=password] {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            border: none;
+            background: #f1f1f1;
+        }
+
+            input[type=text]:focus, input[type=password]:focus {
+                background-color: #ddd;
+                outline: none;
+            }
+
+        /* Set a style for the submit button */
+        .btnn {
+            background-color: blue;
+            color: white;
+            padding: 16px 20px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            opacity: 0.9;
+        }
+
+            .btnn:hover {
+                opacity: 1;
+            }
+    </style>
+</head>
+<body class="bg-img">
+    <form  asp-action="Signin" asp-controller="Admin" class="container">
+            <h1>Sign in</h1>
+
+            <label asp-for="Email"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" asp-for="Email" required>
+
+        <label asp-for="Password"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" asp-for="Password" required>
+           
+            <button type="submit" class="btnn">Login</button>
+        </form>
+    <p class="alert-danger">@ViewBag.message</p>
+</body>
+</html>

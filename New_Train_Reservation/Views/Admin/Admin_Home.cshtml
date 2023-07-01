@@ -1,0 +1,48 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewBag.Title = "Adminstration Section";
+    if (ViewBag.Error == "")
+        Layout = "../Shared/_Layout _Admin_login.cshtml";
+    else
+        Layout = "../Shared/_Layout _Admin.cshtml";
+
+
+}
+<head>
+    <link rel="stylesheet" href="../css/Admin.css" />
+</head>
+<body style="background-image:url('../Images/train/select.jpg');background-size:cover">
+
+    <center>
+    <h1>Welcome to Adminstration Section</h1>
+    </center>
+   <br />
+         <table align="center" width="100%" cellpadding="10" cellspacing="10" border="1" style="border-inline:solid;background-color:white">
+             <tr>
+                 <td align="center">
+                <img src="../Images/Ticket.png" width="100%"/>
+
+                 </td>
+            <td align="center">
+                <img src="../Images/train/images.jpeg" style="width:100%" />
+
+                 </td>
+             </tr>
+        <tr>
+            <td align="center">
+                <form asp-action="Index" asp-controller="Admin" >
+                    <input type="submit"class="btn btn-primary" value="Tickets">
+                </form>
+            </td>
+            <td align="center">
+                <form asp-action="Train_Index" asp-controller="Admin" style="position:center">
+                    <input type="submit"  class="btn btn-primary" value="Trains">
+                </form>
+
+            </td>
+        </tr>
+         </table>
+      
+</body>

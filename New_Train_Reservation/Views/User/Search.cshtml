@@ -1,0 +1,226 @@
+﻿@model New_Train_Reservation.Models.Admin_Tickets
+
+@{
+    ViewData["Title"] = "Search for Ticket";
+    Layout = "../Shared/_Layout_login.cshtml";
+
+}
+<body style="background-image: url('../Images/train/Search2.jpg');background-size:cover;">
+    <h1>Search for Ticket</h1>
+
+    <hr />
+    <div class="row">
+        <div class="col-5">
+            <form asp-action="Search" asp-controller="User">
+                <div asp-validation-summary="All" class="text-light"></div>
+
+                <div class="form-group">
+                    <label asp-for="Pickup_Station" class="control-label">From</label>
+                    <select asp-for="Pickup_Station" class="form-control" required>
+                        <option value="Alexandria">
+                            Alexandria
+                        </option>
+                        <option value="Aswan">
+                            Aswan
+                        </option>
+                        <option value="Asyut">
+                            Asyut
+                        </option>
+                        <option value="Beheira">
+                            Beheira
+                        </option>
+                        <option value="Beni Suef">
+                            Beni Suef
+                        </option>
+                        <option selected value="Cairo">
+                            Cairo
+                        </option>
+                        <option value="Dakahlia">
+                            Dakahlia
+                        </option>
+                        <option value="Damietta">
+                            Damietta
+                        </option>
+                        <option value="Faiyum">
+                            Faiyum
+                        </option>
+                        <option value="Gharbia">
+                            Gharbia
+                        </option>
+                        <option value="Giza">
+                            Giza
+                        </option>
+                        <option value="Ismailia">
+                            Ismailia
+                        </option>
+                        <option value="Kafr El Sheikh">
+                            Kafr El Sheikh
+                        </option>
+                        <option value="Luxor">
+                            Luxor
+                        </option>
+                        <option value="Matruh">
+                            Matruh
+                        </option>
+                        <option value="Minya">
+                            Minya
+                        </option>
+                        <option value="Monufia">
+                            Monufia
+                        </option>
+                        <option value="New Valley">
+                            New Valley
+                        </option>
+                        <option value="North Sinai">
+                            North Sinai
+                        </option>
+                        <option value="Port Said">
+                            Port Said
+                        </option>
+                        <option value="Qalyubia">
+                            Qalyubia
+                        </option>
+                        <option value="Qena">
+                            Qena
+                        </option>
+                        <option value="Red Sea">
+                            Red Sea
+                        </option>
+                        <option value="Sharqia">
+                            Sharqia
+                        </option>
+                        <option value="Sohag">
+                            Sohag
+                        </option>
+                        <option value="South Sinai">
+                            South Sinai
+                        </option>
+                        <option value="Suez">
+                            Suez
+                        </option>
+
+                    </select>
+                    <span asp-validation-for="Pickup_Station" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Destination" class="control-label">To</label>
+                    <select asp-for="Destination" class="form-control" required>
+                        <option value="Alexandria" selected>
+                            Alexandria
+                        </option>
+                        <option value="Aswan">
+                            Aswan
+                        </option>
+                        <option value="Asyut">
+                            Asyut
+                        </option>
+                        <option value="Beheira">
+                            Beheira
+                        </option>
+                        <option value="Beni Suef">
+                            Beni Suef
+                        </option>
+                        <option value="Cairo">
+                            Cairo
+                        </option>
+                        <option value="Dakahlia">
+                            Dakahlia
+                        </option>
+                        <option value="Damietta">
+                            Damietta
+                        </option>
+                        <option value="Faiyum">
+                            Faiyum
+                        </option>
+                        <option value="Gharbia">
+                            Gharbia
+                        </option>
+                        <option value="Giza">
+                            Giza
+                        </option>
+                        <option value="Ismailia">
+                            Ismailia
+                        </option>
+                        <option value="Kafr El Sheikh">
+                            Kafr El Sheikh
+                        </option>
+                        <option value="Luxor">
+                            Luxor
+                        </option>
+                        <option value="Matruh">
+                            Matruh
+                        </option>
+                        <option value="Minya">
+                            Minya
+                        </option>
+                        <option value="Monufia">
+                            Monufia
+                        </option>
+                        <option value="New Valley">
+                            New Valley
+                        </option>
+                        <option value="North Sinai">
+                            North Sinai
+                        </option>
+                        <option value="Port Said">
+                            Port Said
+                        </option>
+                        <option value="Qalyubia">
+                            Qalyubia
+                        </option>
+                        <option value="Qena">
+                            Qena
+                        </option>
+                        <option value="Red Sea">
+                            Red Sea
+                        </option>
+                        <option value="Sharqia">
+                            Sharqia
+                        </option>
+                        <option value="Sohag">
+                            Sohag
+                        </option>
+                        <option value="South Sinai">
+                            South Sinai
+                        </option>
+                        <option value="Suez">
+                            Suez
+                        </option>
+
+                    </select>
+                    <span asp-validation-for="Destination" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Time_Pickup" class="control-label">Date</label>
+                    <input type="date" class="form-control" required />
+                    <span asp-validation-for="Time_Pickup" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Ticket_Classes" class="control-label"></label>
+                    <select class="form-control" asp-for="Ticket_Classes" required>
+                        <option>
+                            @Ticket_Classes.AC1
+                        </option>
+                        <option>
+                            @Ticket_Classes.AC2
+
+                        </option>
+                    </select>
+
+                </div>
+                <br />
+                <div class="form-group">
+                    <input type="submit" value="Search" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+    <div>
+        <p class="alert-light" style="color:saddlebrown">@ViewBag.resultmessage</p>
+    </div>
+
+    <div>
+        <a asp-action="Index" asp-controller="User" style="color:saddlebrown">Back to Home Page</a>
+    </div>
+
+</body>

@@ -1,0 +1,77 @@
+﻿@model New_Train_Reservation.Models.Users
+
+@{
+    ViewData["Title"] = "User_Edit";
+    Layout = "~/Views/Shared/_Layout_login.cshtml";
+}
+
+<h1>User Edit</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="User_Edit">
+            
+           <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ID" />
+            <div class="form-group">
+                <label asp-for="National_Pass_Number" class="control-label">National Number</label>
+                <input asp-for="National_Pass_Number" class="form-control" maxlength="14" minlength="14" />
+                <span asp-validation-for="National_Pass_Number" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="User_Fname" class="control-label">First Name</label>
+                <input asp-for="User_Fname" class="form-control" />
+                <span asp-validation-for="User_Fname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="User_Lname" class="control-label">Family Name</label>
+                <input asp-for="User_Lname" class="form-control" />
+                <span asp-validation-for="User_Lname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label for="Email" class="control-label">Email</label>
+                <input id="Email" class="form-control" value="@Model.Email" disabled />
+                
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" value="@Model.Password" type="password" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="User_phone_number" class="control-label">Phone Number</label>
+                <input asp-for="User_phone_number" class="form-control" maxlength="11"/>
+                <span asp-validation-for="User_phone_number" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Number_of_purchased_tickets" class="control-label">Purchased Tickets</label>
+                <input asp-for="Number_of_purchased_tickets" class="form-control" value="@Model.Number_of_purchased_tickets" disabled/>
+                <span asp-validation-for="Number_of_purchased_tickets" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Gender" class="control-label"></label>
+                <select asp-for="Gender" class="form-control">
+                    <option value="@Gender.Male">
+                        Male
+                    </option>
+                    <option value="@Gender.Female">
+                        Female
+                    </option>
+                </select>
+                <span asp-validation-for="Gender" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+        <form asp-action="User_Delete" asp-controller="User">
+            <input type="submit" class="btn btn-danger" value="Delete Account" />
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
